@@ -1,0 +1,5 @@
+[tool.black]
+preview = "True"
+line-length = "120"
+target-version = ['py39']  # 'py310'
+skip-string-normalization = "True"
