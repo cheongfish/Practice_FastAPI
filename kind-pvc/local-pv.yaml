@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: fastapi-pvc
+spec:
+  hostPath:
+    path: /mnt/project # Set Equal path in extraMounts.containerPath in kind-cluster.yaml
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: "standard"
+  capacity:
+    storage: 5Gi
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - test-worker
