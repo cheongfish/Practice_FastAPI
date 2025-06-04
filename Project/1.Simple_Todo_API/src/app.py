@@ -9,7 +9,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# define data models & tmp data
+# define data models & tmp dat
 
 temp_data = {}
 todo_counter = 0
